@@ -7,10 +7,12 @@ namespace StringSum.Test
     [TestFixture]
     public class UnitTest1
     {
+        private readonly StringCalculator _strCalc = new StringCalculator();
+
         [Test]
         public void empty_string_should_return_0()
         {
-            Assert.AreEqual(StringCalculator.Add(""), 0);
+            Assert.AreEqual(_strCalc.Add(""), 0);
         }
 
         [TestCase("1")]
@@ -22,7 +24,7 @@ namespace StringSum.Test
         [TestCase("9")]
         public void should_calculate_with_one_number(string numbers)
         {
-           Assert.AreEqual(StringCalculator.Add(numbers), int.Parse(numbers));
+           Assert.AreEqual(_strCalc.Add(numbers), int.Parse(numbers));
         }
 
         [TestCase("1,2")]
@@ -34,7 +36,7 @@ namespace StringSum.Test
         [TestCase("9,9")]
         public void should_calculate_with_two_numbers(string numbers)
         {
-            Assert.AreEqual(StringCalculator.Add(numbers), StringCalculaterRunner(numbers));
+            Assert.AreEqual(_strCalc.Add(numbers), StringCalculaterRunner(numbers));
         }
 
         private static int StringCalculaterRunner(string numbers)
@@ -60,7 +62,7 @@ namespace StringSum.Test
                     newStringToCalc += ",";
                 }
             }
-            Assert.AreEqual(StringCalculator.Add(newStringToCalc), StringCalculaterRunner(newStringToCalc));
+            Assert.AreEqual(_strCalc.Add(newStringToCalc), StringCalculaterRunner(newStringToCalc));
         }
 
         [TestCase("1\n3")]
@@ -68,11 +70,9 @@ namespace StringSum.Test
         [TestCase("1\n2,3")]
         public void should_calcualte_if_string_contains_new_lines(string numbers)
         {
-            if (numbers.IndexOf('\n')>0)
-            {
-                string newStringToCalc = numbers.Replace('\n', ',');
-                Assert.AreEqual(StringCalculator.Add(numbers), StringCalculaterRunner(numbers));                  
-            }
+            string newStringToCalculate = numbers.Replace('\n', ',');
+            Assert.AreEqual(_strCalc.Add(newStringToCalculate), StringCalculaterRunner(newStringToCalculate));                  
+            
         }
     }
 }

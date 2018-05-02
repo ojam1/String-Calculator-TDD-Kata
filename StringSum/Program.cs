@@ -9,21 +9,12 @@ namespace StringSum
 {
     class Program
     {
+        private static readonly StringCalculator _strCalc = new StringCalculator();
         static void Main(string[] args)
         {
-            string test = "";
-            for (int i = 1; i <= 1294; i++)
-            {
-                test += i.ToString();
-                if (i != 1294)
-                {
-                    test += ",";
-                }
-            }
 
-            string sdj = "1\n2,3";
+            Console.WriteLine("//;\n1;2");
 
-            Console.WriteLine(sdj.IndexOf('\n'));
         }
     }
 }

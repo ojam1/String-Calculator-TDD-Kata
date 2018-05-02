@@ -14,19 +14,18 @@ namespace StringSum
             
         }
 
-        public static int Add(string numbers)
+       public int Add(string numbers)
         {
-            var sum = 0;
-            if (numbers.Length > 1)
-            {
-                foreach (var number in numbers.Split(','))
-                {
-                    sum += int.Parse(number);
-                }
-            }
-            else sum = string.IsNullOrWhiteSpace(numbers) ? 0 : int.Parse(numbers);
+            string newStringToCalculate = numbers.Replace('\n', ',');
 
-            return sum;
+            if (newStringToCalculate.Length == 1)
+            {
+                return int.Parse(newStringToCalculate);
+            }
+
+            return (newStringToCalculate.Length <= 1 || string.IsNullOrWhiteSpace(newStringToCalculate))
+                ? 0
+                : newStringToCalculate.Split(',').Sum(int.Parse);
         }
     }
 }
