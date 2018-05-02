@@ -21,7 +21,9 @@ namespace StringSum
                 }
             }
 
-            Console.WriteLine(test);
+            string sdj = "1\n2,3";
+
+            Console.WriteLine(sdj.IndexOf('\n'));
         }
     }
 }

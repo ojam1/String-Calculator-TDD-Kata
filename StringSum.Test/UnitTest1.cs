@@ -34,29 +34,45 @@ namespace StringSum.Test
         [TestCase("9,9")]
         public void should_calculate_with_two_numbers(string numbers)
         {
+            Assert.AreEqual(StringCalculator.Add(numbers), StringCalculaterRunner(numbers));
+        }
+
+        private static int StringCalculaterRunner(string numbers)
+        {
             int sum = 0;
             foreach (string number in numbers.Split(','))
             {
                 sum += int.Parse(number);
             }
-            Assert.AreEqual(StringCalculator.Add(numbers), sum);  
+            return sum;
         }
 
         [TestCase(100)]
-        [TestCase(1024909)]
-        [TestCase(1239081904890)]
+        [TestCase(1024)]
         public void should_calcuate_for_large_amount_of_numbers(int numbers)
         {
-            string test = "";
+            string newStringToCalc = "";
             for (int i = 1; i <= numbers; i++)
             {
-                test += i.ToString();
+                newStringToCalc += i.ToString();
                 if (i != numbers)
                 {
-                    test += ",";
+                    newStringToCalc += ",";
                 }
             }
+            Assert.AreEqual(StringCalculator.Add(newStringToCalc), StringCalculaterRunner(newStringToCalc));
+        }
 
+        [TestCase("1\n3")]
+        [TestCase("5,1\n20")]
+        [TestCase("1\n2,3")]
+        public void should_calcualte_if_string_contains_new_lines(string numbers)
+        {
+            if (numbers.IndexOf('\n')>0)
+            {
+                string newStringToCalc = numbers.Replace('\n', ',');
+                Assert.AreEqual(StringCalculator.Add(numbers), StringCalculaterRunner(numbers));                  
+            }
         }
     }
 }
