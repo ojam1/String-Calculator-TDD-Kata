@@ -1,7 +1,7 @@
-C:\code\training\StringSum\StringSum\bin\Debug\StringSum.exe.config
-C:\code\training\StringSum\StringSum\bin\Debug\StringSum.exe
-C:\code\training\StringSum\StringSum\bin\Debug\StringSum.pdb
-C:\code\training\StringSum\StringSum\obj\Debug\StringSum.csprojResolveAssemblyReference.cache
-C:\code\training\StringSum\StringSum\obj\Debug\StringSum.csproj.CoreCompileInputs.cache
-C:\code\training\StringSum\StringSum\obj\Debug\StringSum.exe
-C:\code\training\StringSum\StringSum\obj\Debug\StringSum.pdb
+c:\code\training\StringSum\StringSum\bin\Debug\StringSum.exe.config
+c:\code\training\StringSum\StringSum\bin\Debug\StringSum.exe
+c:\code\training\StringSum\StringSum\bin\Debug\StringSum.pdb
+c:\code\training\StringSum\StringSum\obj\Debug\StringSum.csprojResolveAssemblyReference.cache
+c:\code\training\StringSum\StringSum\obj\Debug\StringSum.csproj.CoreCompileInputs.cache
+c:\code\training\StringSum\StringSum\obj\Debug\StringSum.exe
+c:\code\training\StringSum\StringSum\obj\Debug\StringSum.pdb
