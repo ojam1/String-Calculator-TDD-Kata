@@ -1,5 +1,9 @@
 #bin and Debug folders
 .vs/
+StringSum/bin/Debug/
+StringSum/obj/Debug/
+StringSum.Test/bin/Debug/
+StringSum.Test/obj/Debug/
 
 # Files built by Visual Studio
 *_i.c
